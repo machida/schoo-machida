@@ -17,6 +17,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'xray-rails'
 end
 
 group :production do
