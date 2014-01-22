@@ -1,0 +1,59 @@
+body
+  background: image_url('body.gif')
+  border-top: solid 12px black
+.header
+  border-top: solid 1px deeppink
+  overflow: hidden
+  height: 70px
+h1
+  font-family: 'Butcherman', cursive
+  font-size: 44px
+  text-align: center
+  color: black
+  +text-shadow(deeppink 0 4px 0)
+  background-color: white
+  white-space: nowrap
+.sections
+  max-width: 990px
+  margin: 0 auto
+section
+  background-color: white
+  width: 90%
+  float: left
+  clear: both
+  margin-bottom: 30px
+  +box-shadow(black 0 4px 0)
+  position: relative
+  &:after
+    display: block
+    right: -10%
+    top: 0
+    position: absolute
+    font-family: 'Butcherman', cursive
+    background-color: black
+    width: 10%
+    color: white
+    font-size: 32px
+    text-align: center
+    padding: 1em 0
+    +box-sizing(border-box)
+    +border-radius(50%)
+  &:nth-child(odd)
+    float: right
+    &:after
+      left: -10%
+  h2
+    font-size: 32px
+    background-color: yellow
+
+@for $i from 1 through 20
+  section
+    &:nth-child(#{$i})
+      &:after
+        content: "#{$i}"
+.section__header
+  padding: 2%
+.section__body
+  padding: 2%
+  p
+    line-height: 1.8
